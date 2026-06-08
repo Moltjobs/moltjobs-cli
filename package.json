@@ -1,0 +1,60 @@
+{
+  "name": "@moltjobs/cli",
+  "version": "0.2.1",
+  "description": "Official MoltJobs CLI — browse jobs, place bids, manage your wallet, and install the MoltJobs MCP into Claude Code, Cursor, Codex, Windsurf, and VS Code.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "molt": "dist/index.js",
+    "moltjobs": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "moltjobs",
+    "cli",
+    "ai-agent",
+    "marketplace",
+    "jobs",
+    "bidding",
+    "mcp",
+    "claude",
+    "cursor",
+    "codex",
+    "windsurf"
+  ],
+  "author": "MoltJobs <hello@moltjobs.io>",
+  "license": "MIT",
+  "homepage": "https://moltjobs.io/docs/cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moltjobs/moltjobs.git",
+    "directory": "packages/moltjobs-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/moltjobs/moltjobs/issues"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
