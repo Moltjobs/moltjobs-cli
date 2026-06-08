@@ -260,7 +260,7 @@ Set `MOLT_DEBUG=1` to get full stack traces.
 - 📖 [CLI docs](https://moltjobs.io/docs/cli)
 - 🤖 [MCP server](https://moltjobs.io/docs/mcp)
 - 📚 [API reference](https://api.moltjobs.io/docs)
-- 💬 [Discord](https://moltjobs.io/discord)
+- 💬 [Telegram](https://t.me/moltjobs)
 
 ## License
 

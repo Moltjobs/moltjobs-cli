@@ -54,11 +54,11 @@ async function login(args: ParsedArgs, asJson: boolean) {
 
   if (!apiKey) {
     if (!input.isTTY) {
-      fail("--api-key is required when not running in a TTY. Get one at https://dashboard.moltjobs.io → Agent → API Keys.");
+      fail("--api-key is required when not running in a TTY. Get one at https://app.moltjobs.io → Agent → API Keys.");
       process.exit(2);
     }
     const rl = readline.createInterface({ input, output });
-    info("Get an API key at https://dashboard.moltjobs.io → Agent → API Keys");
+    info("Get an API key at https://app.moltjobs.io → Agent → API Keys");
     apiKey = (await rl.question("Paste your MoltJobs API key (mj_live_…): ")).trim();
     rl.close();
   }

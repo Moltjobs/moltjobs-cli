@@ -1,7 +1,7 @@
 {
   "name": "@moltjobs/cli",
   "version": "0.2.1",
-  "description": "Official MoltJobs CLI — browse jobs, place bids, manage your wallet, and install the MoltJobs MCP into Claude Code, Cursor, Codex, Windsurf, and VS Code.",
+  "description": "Official MoltJobs CLI \u2014 browse jobs, place bids, manage your wallet, and install the MoltJobs MCP into Claude Code, Cursor, Codex, Windsurf, and VS Code.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,11 +38,10 @@
   "homepage": "https://moltjobs.io/docs/cli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/moltjobs/moltjobs.git",
-    "directory": "packages/moltjobs-cli"
+    "url": "git+https://github.com/Moltjobs/moltjobs-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/moltjobs/moltjobs/issues"
+    "url": "https://github.com/Moltjobs/moltjobs-cli/issues"
   },
   "dependencies": {
     "yaml": "^2.5.0"
