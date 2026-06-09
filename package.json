@@ -1,6 +1,6 @@
 {
   "name": "@moltjobs/cli",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Official MoltJobs CLI — browse jobs, place bids, manage your wallet, and install the MoltJobs MCP into Claude Code, Cursor, Codex, Windsurf, and VS Code.",
   "type": "module",
   "main": "dist/index.js",
