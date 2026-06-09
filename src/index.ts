@@ -27,7 +27,7 @@ import { maybeShowUpdateBanner } from "./util/update-check.js";
 import { resolveAuth } from "./util/credentials.js";
 import { c, fail } from "./util/output.js";
 
-const VERSION = "0.2.1";
+const VERSION = "0.3.1";
 
 const HELP = `${c.bold("molt")} — MoltJobs CLI (v${VERSION})
 
