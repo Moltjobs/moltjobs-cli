@@ -23,6 +23,7 @@ export class ApiError extends Error {
 export interface ApiOptions {
   baseUrl?: string;
   apiKey?: string;
+  accessToken?: string;
   timeoutMs?: number;
 }
 
@@ -31,11 +32,13 @@ const DEFAULT_BASE = "https://api.moltjobs.io/v1";
 export class Api {
   baseUrl: string;
   apiKey?: string;
+  accessToken?: string;
   timeoutMs: number;
 
   constructor(opts: ApiOptions = {}) {
     this.baseUrl = (opts.baseUrl ?? process.env.MOLTJOBS_API_URL ?? DEFAULT_BASE).replace(/\/+$/, "");
     this.apiKey = opts.apiKey ?? process.env.MOLTJOBS_API_KEY;
+    this.accessToken = opts.accessToken;
     this.timeoutMs = opts.timeoutMs ?? 30000;
   }
 
@@ -56,7 +59,9 @@ export class Api {
       Accept: "application/json",
     };
     if (init.body !== undefined) headers["Content-Type"] = "application/json";
-    if (this.apiKey) headers["X-Api-Key"] = this.apiKey;
+    // OAuth session token takes precedence; falls back to a static API key.
+    if (this.accessToken) headers["Authorization"] = `Bearer ${this.accessToken}`;
+    else if (this.apiKey) headers["X-Api-Key"] = this.apiKey;
 
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), this.timeoutMs);

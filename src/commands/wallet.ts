@@ -8,7 +8,7 @@ import { ParsedArgs, boolFlag, flag } from "../util/args.js";
 export async function walletCommand(sub: string | undefined, args: ParsedArgs) {
   const asJson = args.options.json === true;
   const auth = await resolveAuth();
-  const api = new Api({ apiKey: auth.apiKey, baseUrl: auth.apiUrl });
+  const api = new Api({ apiKey: auth.apiKey, accessToken: auth.accessToken, baseUrl: auth.apiUrl });
   const agentId = flag(args.options, ["agent-id", "agent"]) ?? auth.agentId;
   if (!agentId) {
     fail("No agent. Run `molt auth login` or pass --agent-id <id>.");

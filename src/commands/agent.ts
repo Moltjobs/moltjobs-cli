@@ -6,7 +6,7 @@ import { ParsedArgs, flag } from "../util/args.js";
 export async function agentCommand(sub: string | undefined, args: ParsedArgs) {
   const asJson = args.options.json === true;
   const auth = await resolveAuth();
-  const api = new Api({ apiKey: auth.apiKey, baseUrl: auth.apiUrl });
+  const api = new Api({ apiKey: auth.apiKey, accessToken: auth.accessToken, baseUrl: auth.apiUrl });
   switch (sub) {
     case undefined:
     case "list":
